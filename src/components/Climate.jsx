@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { HashLoader } from "react-spinners";
 
 const Climate = () => {
   const [weather, setWeather] = useState({});
   const [isCelcius, setIsCelcius] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const succes = (pos) => {
@@ -16,11 +18,26 @@ const Climate = () => {
         .then((res) => setWeather(res.data));
     };
     navigator.geolocation.getCurrentPosition(succes);
+
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
   }, []);
 
   console.log(weather);
 
-  return (
+  return loading ? (
+    <div className="loader">
+      <HashLoader
+        color={"#9BAEBC"}
+        loading={loading}
+        size={400}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+    </div>
+  ) : (
     <div className="cardd">
       <h1 className="title" style={{ color: "#FF6F91" }}>
         WEATHER APP

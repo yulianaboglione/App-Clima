@@ -8,6 +8,7 @@
 body {
   background-image: url(./img/fondo.jpg);
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
 }
 .cardd {
@@ -22,6 +23,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+  transform: translate(-20px);
+  transition: all 1s;
 }
 
 ul {
@@ -32,7 +35,9 @@ ul {
   font-weight: 400;
   padding: 1rem;
 }
-
+.title-three {
+  text-transform: uppercase;
+}
 .btn {
   background-color: #ffcbb6;
   border: 1px solid #ccc;
@@ -40,6 +45,11 @@ ul {
   margin: 30px;
   color: #ff6f91;
   font-weight: 600;
+}
+.btn:hover {
+  transform: translate(-5px);
+  transition: all 1s;
+  cursor: pointer;
 }
 
 .temperature {
@@ -50,4 +60,10 @@ ul {
 .icon {
   min-width: 300px;
   min-height: 300px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
 }
