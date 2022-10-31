@@ -67,3 +67,14 @@ ul {
   flex-direction: column;
   text-align: start;
 }
+
+@media screen and (min-width: 350px) {
+  .cardd {
+    width: fit-content;
+    height: fit-content;
+  }
+  .la {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}

@@ -30,6 +30,7 @@ const Climate = () => {
   return loading ? (
     <div className="loader">
       <HashLoader
+        className="la"
         color={"#9BAEBC"}
         loading={loading}
         size={400}
